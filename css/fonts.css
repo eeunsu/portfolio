@@ -1,0 +1,15 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+/* Noto Serif */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&display=swap');
+/* Noto sans */
+@import url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
+/* Dongle */
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
+
+body {
+    font-family: 'Noto Serif KR', 'Noto Sans KR', sans-serif;
+    color: #555;
+    font-weight: 400;
+}
