@@ -1,11 +1,13 @@
 @charset "utf-8";
 @import url(fonts.css);
 
+* {box-sizing: border-box;}
 body {
-    font-size: 1em;
+    font-size: 16px;
     font-family: "Noto Sans KR", sans-serif;
+    color: #333;
+    font-weight: 400;
 }
-
 /* common */
 .inner_01 {
     max-width: 1600px;
@@ -16,7 +18,6 @@ body {
     max-width: 1400px;
     margin: 0 auto;
 }
-
 
 @keyframes fadeIn {
     from {
@@ -31,21 +32,8 @@ body {
 }
 
 /* header */
-header {
-    position: fixed;
-    top: 30px;
-    right: 0;
-    z-index: 999;
-}
-
-header ul {
-    display: flex;
-}
-
-header ul>li {
-    margin-right: 50px;
-}
-
+header { position: fixed; top: 0; right: 0; z-index: 999; width: 100%; display: flex; justify-content: flex-end; padding: 20px; background-color: #fff;}
+header ul { display: flex; gap: 50px;}
 header ul>li a {
     font-size: 20px;
     color: #0000009b;
@@ -53,42 +41,39 @@ header ul>li a {
 }
 
 header ul>li a:hover {
-    color: #000;
+    color: #333;
 }
 
 /* section1 */
 .intro_box {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     opacity: 0;
+    justify-content: center;
     animation: fadeIn 2s forwards;
 }
 
 .intro_box .img_box img {
-    width: 280px;
+    width: 380px;
     height: 380px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .intro_box .intro_text {
     margin-left: 50px;
 }
 
-.intro_box .intro_text h1 {
-    font-size: 2.25rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #000;
-
+.intro_box .intro_text h2 {
+    font-size: 36px;
+    font-weight: 700;
 }
 
 .intro_box .intro_text p {
+    word-break: keep-all;
     opacity: 0;
     animation: fadeInText 2s forwards;
-    line-height: 1.7;
-    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 @keyframes fadeInText {
@@ -141,103 +126,120 @@ header ul>li a:hover {
 }
 
 /* section2 */
-#section2 h1 {
-    display: inline-block;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 80px;
-    font-size: 3.13rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+#section2 h2 {
+    position: relative;
+    padding-left: 30px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #17153f;
     font-family: 'montserrat';
-    color: #202020;
-    background: rgba(255, 160, 122, 0.306);
-    border-radius: 5px;
-    box-sizing: border-box;
-    padding: 5px 10px;
+    margin-bottom: 50px;
+}
+#section2 h2::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 50%;
+    border-radius: 3px;
+    background-color: #17153f;
 }
 
 .info {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px;
 }
 
 .info .info_profile {
-    width: 50%;
+    width: calc(50% - 25px);
     display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
-
-.info .info_profile .img h2 {
+.info .info_profile h3 {
+    width: 100%;
     font-family: "Dongle", sans-serif;
-    font-size: 3.44em;
+    font-size: 55px;
     font-weight: 400;
-    color: #000;
-    margin-bottom: 15px;
 }
+.info .info_profile .img {width: calc(50% - 15px); display: flex; justify-content: center; align-items: center;}
+
 
 .info .info_profile img {
     border-radius: 5%;
-    width: 300px;
-    height: 400px;
+    width: 200px;
 }
 
 .info .info_profile ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 3.13em;
+    width: calc(50% - 15px);
+    gap: 15px;
 }
 
 .info .info_profile ul>li {
-    font-size: 1.13em;
-    margin-bottom: 0.63em;
+    font-size: 18px;
 }
+.info .info_profile ul > li > span {width: 100%; display: block;}
 
-.info .info_profile ul>li p:first-child {
-    color: #000;
+.info .info_profile ul>li span.name {
     font-weight: 500;
 }
+.info .info_profile ul>li span:not(.name) {color: #666;}
 
 .info .info_skills {
-    width: 50%;
+    width: calc(50% - 25px);
     display: flex;
     flex-flow: column wrap;
+    gap: 30px;
 }
 
-.info .info_skills h2 {
+.info .info_skills h3 {
     font-family: "Dongle", sans-serif;
-    font-size: 3.44em;
+    font-size: 55px;
     font-weight: 400;
-    color: #000;
-    margin-bottom: 15px;
 }
-
+.info .info_skills ul {display: flex; flex-direction: column; gap: 15px;}
 .info .info_skills ul>li {
     width: 100%;
-    display: flex;
-    margin-bottom: 15px;
+    display: flex; 
+    align-items: center;
     letter-spacing: -1px;
+    gap: 10px;
 }
 
 .info .info_skills ul>li .icon {
-    margin-right: 20px;
+    display: flex;
+}
+.info .info_skills ul>li .icon img {
+    border-radius: 10px;
 }
 
 /* section3 */
-#section3 h1 {
-    display: inline-block;
-    text-align: center;
-    margin-top: 90px;
-    margin-bottom: 50px;
-    font-size: 3.13rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+#section3 h2 {
+    position: relative;
+    padding-left: 30px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #17153f;
     font-family: 'montserrat';
-    color: #202020;
-    border-radius: 5px;
-    box-sizing: border-box;
-    padding: 5px 10px;
-    background: #ffcb304f;
+    margin-bottom: 50px;
+}
+#section3 h2::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 50%;
+    border-radius: 3px;
+    background-color: #17153f;
 }
 
 .portfolio_area {
@@ -253,19 +255,15 @@ header ul>li a:hover {
 
 .portfolio_area .pick_tap ul>li {
     position: relative;
-    padding: 10px 20px;
-    box-sizing: border-box;
-}
-
-.portfolio_area .pick_tap ul>li.on {
-    border-radius: 50px;
+    flex: 1;
+    text-align: center;
 }
 
 .portfolio_area .pick_tap ul>li:hover>a,
 .portfolio_area .pick_tap ul>li:hover>a:focus,
 .portfolio_area .pick_tap ul>li.on a {
-    font-weight: 600;
-    border-bottom: 3px solid #ffcb304f;
+    color: #17153f;
+    border-bottom: 3px solid #17153f;
 }
 
 .portfolio_area .pick_tap ul>li a {
@@ -274,34 +272,31 @@ header ul>li a:hover {
     font-size: 17px;
     font-family: 'Noto-sans KR';
     padding: 10px 20px;
-    box-sizing: border-box;
 }
 
-.portfolio_area .pick_tap ul>li::before {
-    content: "";
+.portfolio_area .pick_tap ul>li:not(:first-child)::before {
+    content: '';
     position: absolute;
+    top: 50%;
     left: 0;
-    right: 0;
-    top: 12px;
-    width: 1px;
-    height: 20px;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 60%;
     background-color: #ddd;
-}
-
-.portfolio_area .pick_tap ul>li:first-child:before {
-    display: none;
 }
 
 /* tab_content */
 .portfolio_area .pick_tap ul>li.on a {
-    color: #333;
     font-weight: 500;
 }
 
 .portfolio_area .tab_area {
     display: flex;
 }
-
+.portfolio_area .tab_content > a {
+    width: calc(60% - 25px);
+    text-align: center;
+}
 .portfolio_area .tab_content img {
     width: 700px;
     height: 450px;
@@ -321,33 +316,53 @@ header ul>li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
 }
 
 .portfolio_text {
-    margin-left: 50px;
+    width: calc(40% - 25px);
 }
 
 .portfolio_text h3 {
-    color: #000;
-    font-size: 2.13rem;
+    width: 100%;
+    font-size: 34px;
     letter-spacing: 1px;
     font-family: 'montserrat';
     margin-bottom: 15px;
 }
 
 .portfolio_text p {
-    line-height: 2;
+    line-height: 32px;
 }
 
 .portfolio_text .page {
     margin-top: 50px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+.portfolio_text .page a {
+    display: block;
+    white-space: nowrap;
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+    padding: 8px 10px;
+    background-color: #fff;
+    border: 2px solid #17153f;
+    color: #17153f;
+    font-weight: 700;
+}
+.portfolio_text .page a:hover {
+    transition: all 0.3s;
+    background-color: #17153f;
+    color: #fff;
 }
 
-.portfolio_text .page a {
+/* .portfolio_text .page a {
     padding: 10px 30px;
-    box-sizing: border-box;
     border-radius: 5px;
-    color: #000;
+    color: #333;
     background: #ffcb304f;
     margin-right: 20px;
 }
@@ -356,4 +371,4 @@ header ul>li a:hover {
     transition: all 0.5s;
     background: goldenrod;
     color: #fff;
-}
+} */

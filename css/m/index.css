@@ -1,0 +1,98 @@
+@charset "utf-8";
+@media screen and (max-width: 1000px) {
+    body {
+        font-size: 15px;
+    }
+    header ul>li a {
+        font-size: 18px;
+    }
+    .intro_box .intro_text h1 {
+        font-size: 2rem;
+    }
+    .intro_box .img_box img {
+        width: 230px;
+        height: 320px;
+    }
+    .intro_box .intro_text p {
+        font-size: 1em;
+    }
+
+    /* #section2 */
+    #section2 h1 {
+        font-size: 2.13rem;
+        margin-left: 10px;
+        margin-top: 0;
+    }
+    .info .info_profile .img h2 {
+        font-size: 3em;
+    }
+    .info .info_skills h2 {font-size: 3em;}
+    .info .info_profile img {
+        width: 230px;
+        height: 300px;
+    }
+    .info .info_profile ul>li {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .fp-tableCell {
+        display: flex;
+    }
+    header {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+     header ul > li a {
+        padding: 3px 6px;
+     }   
+    .intro_box {
+        padding: 0 2.5%;
+        box-sizing: border-box;
+        margin-top: -300px;
+        width: 100%;
+        flex-direction: column;
+    }
+    .intro_box .intro_text {margin-left: 0;}
+    .intro_box .intro_text h1 {
+        text-align: center;
+    }
+    .intro_box .intro_text p {
+        font-size: 1em;
+    }
+    .info {
+        padding: 0 2.5%;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+    .info .info_profile .img h2 {
+        text-align: center;
+    }
+    .info .info_profile .img h2 {
+        margin: 0 auto;
+    }
+    .info .info_profile img {
+        width: 150px;
+        height: 200px;
+    }
+    .info .info_profile ul>li p {
+        font-size: 0.83em;
+    }
+    .info .info_profile {
+        width: 100%;
+    }
+    .info .info_profile ul {
+        margin-left: 1em;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .info .info_skills {
+        width: 100%;
+        flex-direction: column;
+
+    }
+}
